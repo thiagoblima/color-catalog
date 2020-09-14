@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ProgressViewIOS } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
+      <ProgressViewIOS progress={0.5} />
       <Text style={styles.texts}>Release My Book App!</Text>
       <Text style={styles.texts}>Write and find out!</Text>
       <ActivityIndicator size="large" color="#61DBfB" />
