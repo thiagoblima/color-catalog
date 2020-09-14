@@ -1,10 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, ProgressViewIOS, Button } from 'react-native';
+import { StyleSheet, Text, View, ActivityIndicator, ProgressViewIOS, Button, Alert, Dimensions, Platform } from 'react-native';
 
 export default function App() {
+
+  const { height, width } = Dimensions.get('window') 
+
   const onButtonPress = () => {
-    console.log(`${new Date().toLocaleTimeString()} button press.`)
+      Alert.alert(`${new Date().toLocaleTimeString()} button press.`)
   }
 
   return (
@@ -14,6 +17,9 @@ export default function App() {
       <Text style={styles.texts}>Write and find out!</Text>
       <ActivityIndicator size="large" color="#61DBfB" />
       <Button title="Click me" onPress={onButtonPress}/>
+      <Text> Platform: {Platform.OS}</Text>
+      <Text> height: {height} </Text>
+      <Text> width: {width} </Text>
       <StatusBar style="auto" />
     </View>
   );
