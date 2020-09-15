@@ -1,41 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ActivityIndicator, ProgressViewIOS, Button, Alert, Dimensions, Platform } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
-
-  const { height, width } = Dimensions.get('window') 
-
-  const onButtonPress = () => {
-      Alert.alert(`${new Date().toLocaleTimeString()} button press.`)
-  }
-
+  
   return (
-    <View style={styles.container}>
-      { ProgressViewIOS === "ios" && <ProgressViewIOS progress={0.5} />}
-      <Text style={styles.texts}>Release My Book App!</Text>
-      <Text style={styles.texts}>Write and find out!</Text>
-      <ActivityIndicator size="large" color="#61DBfB" />
-      <Button title="Click me" onPress={onButtonPress}/>
-      <Text> Platform: {Platform.OS}</Text>
-      <Text> height: {height} </Text>
-      <Text> width: {width} </Text>
-      <StatusBar style="auto" />
+    <View style={styles.page}>
+       <Text style={styles.text}>red</Text>
+       <Text style={[styles.text, styles.selectedText]}>green</Text>
+       <Text style={styles.text}>blue</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  page: {
+    marginTop: 40,
+    backgroundColor: '#DDD'
   },
-  texts: {
-    color: '#333DDD'
+  text: {
+    fontSize: 22,
+    color: 'red',
+    backgroundColor: 'yellow',
+    margin: 10,
+    padding: 5
   },
-  activity: {
-    color: '#61DBfB'
+  selectedText: {
+    backgroundColor: 'red',
+    color: 'yellow'
   }
 });
