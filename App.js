@@ -1,34 +1,42 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { Text, View, StyleSheet } from "react-native";
 
 export default function App() {
-  
+  const [backgroundColor, setBackgroundColor] = useState(
+    "blue"
+  );
   return (
-    <View style={styles.page}>
-       <Text style={styles.text}>red</Text>
-       <Text style={[styles.text, styles.selectedText]}>green</Text>
-       <Text style={styles.text}>blue</Text>
+    <View style={[styles.container, { backgroundColor }]}>
+      <Text
+        style={styles.button}
+        onPress={() => setBackgroundColor("green")}
+      >
+        green
+      </Text>
+      <Text
+        style={styles.button}
+        onPress={() => setBackgroundColor("red")}
+      >
+        red
+      </Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  page: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 40,
-    backgroundColor: '#DDD'
-  },
-  text: {
+  container: {
     flex: 1,
-    fontSize: 22,
-    color: 'red',
-    backgroundColor: 'yellow',
-    margin: 10,
-    padding: 5
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   },
-  selectedText: {
-    backgroundColor: 'red',
-    color: 'yellow'
+  button: {
+    fontSize: 30,
+    margin: 10,
+    padding: 10,
+    borderWidth: 2,
+    borderRadius: 10,
+    alignSelf: "stretch",
+    textAlign: "center"
   }
 });
