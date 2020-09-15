@@ -14,10 +14,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   page: {
+    flexDirection: 'row',
+    justifyContent: 'center',
     marginTop: 40,
     backgroundColor: '#DDD'
   },
   text: {
+    flex: 1,
     fontSize: 22,
     color: 'red',
     backgroundColor: 'yellow',
