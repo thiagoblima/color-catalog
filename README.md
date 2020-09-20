@@ -1,7 +1,7 @@
 # Color Catalog - React Native 
 > A React Native studying and experiments repository written for general purpose and knowledge spreading.
 
-![](assets/docker.png)
+![](assets/reactnative.jpg)
 
 ## Expo
 
