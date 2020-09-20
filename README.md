@@ -23,12 +23,17 @@ npm install expo-cli --global
 npm install @react-navigation/native
 ```
 
-3. It should be all good to get it started through the pretty wellknown command:
+3. Adding _Expo/ReactNative_ dependencies:
+
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+4. It should be all good to get it started through the pretty wellknown command:
 
 ```
 npm start
 ```
-
 
 ## Release History
 
